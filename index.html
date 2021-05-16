@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Library</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/edd46228d9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1 id="show-modal">Add Book</h1>
+    <!-- Books -->
+    <div class="container" id="books-container"></div>
+    <!-- Modal -->
+    <div class="modal-container" id="modal">
+      <div class="modal">
+        <i
+          class="fas fa-times close-icon"
+          id="close-modal"
+          data-action="close"
+        ></i>
+        <div class="modal-header">
+          <h3 id="modal-title">Add Book</h3>
+        </div>
+        <div class="modal-content">
+          <form id="book-form" autocomplete="off">
+            <!-- Book Title -->
+            <div class="form-group">
+              <label class="form-label" for="book-title">Book title</label>
+              <input class="form-input" type="text" id="title" />
+            </div>
+            <!-- Book Author -->
+            <div class="form-group">
+              <label class="form-label" for="book-author">Book Author</label>
+              <input class="form-input" type="text" id="author" />
+            </div>
+            <!-- Book Description -->
+            <div class="form-group">
+              <label class="form-label" for="book-description"
+                >Book Description</label
+              >
+              <input class="form-input" type="text" id="description" />
+            </div>
+            <div class="buttons">
+              <button id="save-button" type="submit">Save</button>
+              <button id="edit-button" type="submit" data-action="edit-save">
+                Edit Book
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="book-container"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

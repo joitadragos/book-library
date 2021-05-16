@@ -1,0 +1,29 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "nume",
+      "author": "paric",
+      "description": "also",
+      "coverImage": "daaa"
+    },
+    {
+      "title": "churchill",
+      "author": "autorr ",
+      "description": "desccriere fainadddaaaa",
+      "id": 6
+    },
+    {
+      "title": "churchill",
+      "author": "autorrrrrrrrrrrrrrr ",
+      "description": "desccriere faina",
+      "id": 7
+    },
+    {
+      "title": "churchill",
+      "author": "autorr ",
+      "description": "desccriere fainadddaaaa",
+      "id": 8
+    }
+  ]
+}
