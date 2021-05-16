@@ -1,29 +1,28 @@
 {
   "books": [
     {
-      "id": 1,
-      "title": "nume",
-      "author": "paric",
-      "description": "also",
-      "coverImage": "daaa"
+      "title": "test",
+      "author": "test",
+      "description": "test",
+      "rating": "like",
+      "starRating": " ",
+      "id": 1
     },
     {
-      "title": "churchill",
-      "author": "autorr ",
-      "description": "desccriere fainadddaaaa",
-      "id": 6
+      "title": "tset2",
+      "author": "test2",
+      "description": "test2",
+      "rating": "like",
+      "starRating": " ",
+      "id": 2
     },
     {
-      "title": "churchill",
-      "author": "autorrrrrrrrrrrrrrr ",
-      "description": "desccriere faina",
-      "id": 7
-    },
-    {
-      "title": "churchill",
-      "author": "autorr ",
-      "description": "desccriere fainadddaaaa",
-      "id": 8
+      "title": "test3",
+      "author": "test3",
+      "description": "descriere",
+      "rating": "like",
+      "starRating": " ",
+      "id": 3
     }
   ]
 }

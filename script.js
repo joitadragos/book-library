@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
             bookContainer.innerHTML += `
             <div class="item">
               <div id=${book.id}>
-                <h2>${book.title}</h2>
+                <h2 >${book.title}</h2>
                 <h3>Book Rating: ${book.rating} ${book.starRating}</h3>
                 <h4>Author: ${book.author}</h4>
                 <p>${book.description}</p>
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
             bookContainer.innerHTML += `
             <div class="item">
               <div id=${book.id}>
-                <h2>${book.title}</h2>
+                <h2 >${book.title}</h2>
                 <h3>Book Rating: ${book.rating} ${book.starRating}</h3>
                 <h4>Author: ${book.author}</h4>
                 <p>${book.description}</p>
@@ -199,3 +199,31 @@ function starCreator(number) {
   }
   return stars;
 }
+
+// Search
+const searchInput = document.querySelector('#search-box');
+
+searchInput.addEventListener('keyup', function (e) {
+  let searchItem = e.target.value.toLowerCase();
+
+  const booksTitle = document.querySelectorAll('.container .item h2');
+  const booksAuthor = document.querySelectorAll('.container .item h4');
+
+  // search a book by it's title
+  booksTitle.forEach(function (book) {
+    if (book.innerHTML.toLocaleLowerCase().indexOf(searchItem) != -1) {
+      book.closest('.item').style.display = 'block';
+    } else {
+      book.closest('.item').style.display = 'none';
+    }
+  });
+
+  // Search book by it's author
+  booksAuthor.forEach(function (book) {
+    if (book.innerHTML.toLocaleLowerCase().indexOf(searchItem) != -1) {
+      book.closest('.item').style.display = 'block';
+    } else {
+      book.closest('.item').style.display = 'none';
+    }
+  });
+});

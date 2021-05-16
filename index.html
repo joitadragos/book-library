@@ -13,6 +13,17 @@
   </head>
   <body>
     <h1 id="show-modal">Add Book</h1>
+
+    <!-- Search bar -->
+    <div class="search-box">
+      <input
+        class="search"
+        type="text"
+        name="search-box"
+        id="search-box"
+        placeholder="Filter Books ..."
+      />
+    </div>
     <!-- Books -->
     <div class="container" id="books-container"></div>
     <!-- Modal -->
@@ -47,7 +58,7 @@
             </div>
             <div class="form-group">
               <label for="book-rating" class="form-label">Rate this book</label>
-              <select name="book-rating" id="book-rating">
+              <select name="book-rating" id="book-rating" required>
                 <option value="like">Like</option>
                 <option value="dislike">Dislike</option>
                 <option value="neutral">Neutral</option>
