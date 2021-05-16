@@ -45,6 +45,26 @@
               >
               <input class="form-input" type="text" id="description" />
             </div>
+            <div class="form-group">
+              <label for="book-rating" class="form-label">Rate this book</label>
+              <select name="book-rating" id="book-rating">
+                <option value="like">Like</option>
+                <option value="dislike">Dislike</option>
+                <option value="neutral">Neutral</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="book-stars-rating" class="form-label"
+                >Give this Books Some stars</label
+              >
+              <select name="book-stars-rating" id="book-stars-rating" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
             <div class="buttons">
               <button id="save-button" type="submit">Save</button>
               <button id="edit-button" type="submit" data-action="edit-save">

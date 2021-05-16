@@ -6,6 +6,8 @@ const bookForm = document.getElementById('book-form');
 const bookTitleEl = document.getElementById('title');
 const bookAuthorEl = document.getElementById('author');
 const bookDescriptionEl = document.getElementById('description');
+const bookRatingEl = document.getElementById('book-rating');
+const bookStarsRatingEl = document.getElementById('book-stars-rating');
 const booksContainer = document.getElementById('books-container');
 const inputs = document.querySelectorAll('input');
 function showModal() {
@@ -36,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="item">
           <div id=${book.id}>
             <h2>${book.title}</h2>
+            <h3>Book Rating: ${book.rating} ${book.starRating} ★</h3>
             <h4>Author: ${book.author}</h4>
             <p>${book.description}</p>
             <button data-id="${book.id}" id="edit-${book.id}" data-action="edit">Edit</button>
@@ -53,6 +56,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const titleInput = bookForm.querySelector('#title').value;
     const authorInput = bookForm.querySelector('#author').value;
     const descInput = bookForm.querySelector('#description').value;
+    const ratingInput = bookForm.querySelector('#book-rating').value;
+    const starRatingInput = starCreator(
+      bookForm.querySelector('#book-stars-rating').value,
+    );
 
     if (validate(titleInput, authorInput, descInput) === true) {
       fetch(`${bookURL}`, {
@@ -61,6 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
           title: titleInput,
           author: authorInput,
           description: descInput,
+          rating: ratingInput,
+          starRating: starRatingInput,
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -73,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="item">
               <div id=${book.id}>
                 <h2>${book.title}</h2>
+                <h3>Book Rating: ${book.rating} ${book.starRating}</h3>
                 <h4>Author: ${book.author}</h4>
                 <p>${book.description}</p>
                 <button data-id="${book.id}" id="edit-${book.id}" data-action="edit">Edit</button>
@@ -97,23 +107,30 @@ document.addEventListener('DOMContentLoaded', function () {
       bookTitleEl.value += `${bookData.title}`;
       bookAuthorEl.value += `${bookData.author}`;
       bookDescriptionEl.value += `${bookData.description}`;
+      bookRatingEl.value += `${bookData.rating}`;
+      bookStarsRatingEl.value += `${bookData.starRating}`;
 
       const saveButton = document.getElementById('save-button');
       saveButton.style.display = 'none'; //Hide Save button
       const editButtonSave = document.getElementById('edit-button');
       editButtonSave.style.display = 'block'; // Make Edit Book button visible
-
+      // #############################################################################################
+      // const bookRating = document.getElementById('book-rating').value;
+      // console.log(bookRating);
       editButtonSave.addEventListener('click', function () {
         const editedTitle = bookTitleEl.value;
         const editedAuthor = bookAuthorEl.value;
         const editedDescription = bookDescriptionEl.value;
-
+        const editedRating = bookRatingEl.value;
+        const editedStarRating = starCreator(bookStarsRatingEl.value);
         fetch(`${bookURL}/${bookData.id}`, {
           method: 'PATCH',
           body: JSON.stringify({
             title: editedTitle,
             author: editedAuthor,
             description: editedDescription,
+            rating: editedRating,
+            starRating: editedStarRating,
           }),
           headers: {
             'Content-Type': 'application/json',
@@ -125,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="item">
               <div id=${book.id}>
                 <h2>${book.title}</h2>
+                <h3>Book Rating: ${book.rating} ${book.starRating}</h3>
                 <h4>Author: ${book.author}</h4>
                 <p>${book.description}</p>
                 <button data-id="${book.id}" id="edit-${book.id}" data-action="edit">Edit</button>
@@ -173,3 +191,11 @@ document.addEventListener('DOMContentLoaded', function () {
     return true;
   }
 });
+
+function starCreator(number) {
+  let stars = ' ';
+  for (let i = 0; i < number - 1; i++) {
+    stars += '★';
+  }
+  return stars;
+}
