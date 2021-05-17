@@ -8,8 +8,10 @@ const bookAuthorEl = document.getElementById('author');
 const bookDescriptionEl = document.getElementById('description');
 const bookRatingEl = document.getElementById('book-rating');
 const bookStarsRatingEl = document.getElementById('book-stars-rating');
+const bookCategoryEl = document.getElementById('book-category');
 const booksContainer = document.getElementById('books-container');
 const inputs = document.querySelectorAll('input');
+
 function showModal() {
   modal.classList.add('show-modal');
   bookTitleEl.focus();
@@ -40,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <h2>${book.title}</h2>
             <h3>Book Rating: ${book.rating} ${book.starRating} ★</h3>
             <h4>Author: ${book.author}</h4>
+            <h5>Category: ${book.category} </h5>
             <p>${book.description}</p>
             <button data-id="${book.id}" id="edit-${book.id}" data-action="edit">Edit</button>
             <button data-id="${book.id}" id="delete-${book.id}" data-action="delete">Delete</button>
@@ -57,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const authorInput = bookForm.querySelector('#author').value;
     const descInput = bookForm.querySelector('#description').value;
     const ratingInput = bookForm.querySelector('#book-rating').value;
+    const categoryInput = bookForm.querySelector('#book-category').value;
     const starRatingInput = starCreator(
       bookForm.querySelector('#book-stars-rating').value,
     );
@@ -70,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
           description: descInput,
           rating: ratingInput,
           starRating: starRatingInput,
+          category: categoryInput,
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -84,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <h2 >${book.title}</h2>
                 <h3>Book Rating: ${book.rating} ${book.starRating}</h3>
                 <h4>Author: ${book.author}</h4>
+                <h5>Category: ${book.category} </h5>
                 <p>${book.description}</p>
                 <button data-id="${book.id}" id="edit-${book.id}" data-action="edit">Edit</button>
                 <button data-id="${book.id}" id="delete-${book.id}" data-action="delete">Delete</button>
@@ -109,20 +115,20 @@ document.addEventListener('DOMContentLoaded', function () {
       bookDescriptionEl.value += `${bookData.description}`;
       bookRatingEl.value += `${bookData.rating}`;
       bookStarsRatingEl.value += `${bookData.starRating}`;
+      bookCategoryEl.value += `${bookData.starRating}`;
 
       const saveButton = document.getElementById('save-button');
       saveButton.style.display = 'none'; //Hide Save button
       const editButtonSave = document.getElementById('edit-button');
       editButtonSave.style.display = 'block'; // Make Edit Book button visible
-      // #############################################################################################
-      // const bookRating = document.getElementById('book-rating').value;
-      // console.log(bookRating);
+
       editButtonSave.addEventListener('click', function () {
         const editedTitle = bookTitleEl.value;
         const editedAuthor = bookAuthorEl.value;
         const editedDescription = bookDescriptionEl.value;
         const editedRating = bookRatingEl.value;
         const editedStarRating = starCreator(bookStarsRatingEl.value);
+        const editedCategory = bookCategoryEl.value;
         fetch(`${bookURL}/${bookData.id}`, {
           method: 'PATCH',
           body: JSON.stringify({
@@ -131,6 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: editedDescription,
             rating: editedRating,
             starRating: editedStarRating,
+            category: editedCategory,
           }),
           headers: {
             'Content-Type': 'application/json',
@@ -141,9 +148,10 @@ document.addEventListener('DOMContentLoaded', function () {
             bookContainer.innerHTML += `
             <div class="item">
               <div id=${book.id}>
-                <h2 >${book.title}</h2>
+                <h2>Title: ${book.title}</h2>
                 <h3>Book Rating: ${book.rating} ${book.starRating}</h3>
                 <h4>Author: ${book.author}</h4>
+                <h4>Category: ${book.category} </h4>
                 <p>${book.description}</p>
                 <button data-id="${book.id}" id="edit-${book.id}" data-action="edit">Edit</button>
                 <button data-id="${book.id}" id="delete-${book.id}" data-action="delete">Delete</button>
@@ -192,6 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+//function used to create stars using user's choice
 function starCreator(number) {
   let stars = ' ';
   for (let i = 0; i < number - 1; i++) {
@@ -227,3 +236,23 @@ searchInput.addEventListener('keyup', function (e) {
     }
   });
 });
+
+const categoryButtons = document.querySelectorAll('.category-button');
+for (let i = 0; i < categoryButtons.length; i++) {
+  categoryButtons[i].addEventListener('click', function (e) {
+    let buttonValue = e.target.value;
+
+    const bookCategory = document.querySelectorAll('.container .item h5');
+    bookCategory.forEach(function (book) {
+      if (book.innerHTML.indexOf(buttonValue) != -1) {
+        book.closest('.item').style.display = 'block';
+      } else {
+        book.closest('.item').style.display = 'none';
+      }
+    });
+  });
+}
+const showAllButton = document.getElementById('show-all');
+
+//To keep thins easy when user'll press show all button, I just reload the page and there will be all books
+showAllButton.addEventListener('click', () => window.location.reload());

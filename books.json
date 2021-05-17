@@ -6,23 +6,35 @@
       "description": "test",
       "rating": "like",
       "starRating": " ",
+      "category": "history",
       "id": 1
     },
     {
-      "title": "tset2",
+      "title": "test2",
       "author": "test2",
       "description": "test2",
       "rating": "like",
-      "starRating": " ",
+      "starRating": " ★★★★",
+      "category": "computers",
       "id": 2
     },
     {
       "title": "test3",
       "author": "test3",
-      "description": "descriere",
-      "rating": "like",
-      "starRating": " ",
+      "description": "test3",
+      "rating": "neutral",
+      "starRating": " ★★",
+      "category": "parenting",
       "id": 3
+    },
+    {
+      "title": "test22",
+      "author": "test2",
+      "description": "test2",
+      "rating": "neutral",
+      "starRating": " ",
+      "category": "computers",
+      "id": 4
     }
   ]
 }

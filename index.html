@@ -13,7 +13,27 @@
   </head>
   <body>
     <h1 id="show-modal">Add Book</h1>
+    <h2 class="category-title">Choose a book category</h2>
 
+    <!-- Buttons to choose a category -->
+    <div class="category-buttons">
+      <button class="category-reset-button" id="show-all">Show All</button>
+      <button class="category-button" id="history" value="history">
+        History</button
+      ><button class="category-button" id="computers" value="computers">
+        Computers</button
+      ><button class="category-button" id="parenting" value="parenting">
+        Parenting</button
+      ><button class="category-button" id="cooking" value="cooking">
+        Cooking</button
+      ><button class="category-button" id="hobbies" value="hobbies">
+        Hobbies</button
+      ><button class="category-button" id="literature" value="literature">
+        Literature</button
+      ><button class="category-button" id="others" value="others">
+        Others
+      </button>
+    </div>
     <!-- Search bar -->
     <div class="search-box">
       <input
@@ -74,6 +94,20 @@
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="book-category" class="form-label">
+                Book's category
+              </label>
+              <select name="book-category" id="book-category" required>
+                <option value="history">History</option>
+                <option value="computers">Computers</option>
+                <option value="parenting">Parenting</option>
+                <option value="cooking">Cooking</option>
+                <option value="hobbies">Hobbies</option>
+                <option value="literature">Literature</option>
+                <option value="others">Others</option>
               </select>
             </div>
             <div class="buttons">

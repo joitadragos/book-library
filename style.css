@@ -115,7 +115,10 @@ button {
 
 button:hover {
   filter: brightness(110%);
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--button-color);
 }
+
 button:focus {
   outline: none;
 }
@@ -131,7 +134,7 @@ button:focus {
   border-radius: var(--border-radius);
   padding: 20px;
   margin: 20px;
-  flex: 1 0 30%;
+  flex: 1 0 29%;
   max-width: 35rem;
 }
 .item:hover {
@@ -155,4 +158,23 @@ option {
   padding: 10px;
   background: rgba(0, 0, 0, 0.5);
   font-size: 20px;
+}
+.search::placeholder {
+  color: var(--button-color);
+}
+.search:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+/* Order buttons style */
+
+.category-buttons {
+  display: flex;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  justify-content: space-evenly;
+}
+.category-title {
+  margin-top: 50px;
+  text-align: center;
+  color: var(--black-color);
 }
