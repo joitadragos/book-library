@@ -170,12 +170,17 @@ document.addEventListener('DOMContentLoaded', function () {
     //here we delete a book from the list
     if (e.target.dataset.action === 'delete') {
       console.log('you pressed delete');
-      fetch(`${bookURL}/${e.target.dataset.id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }).then((response) => response.json());
+      if (confirm('Are you sure you want to delete this book?')) {
+        fetch(`${bookURL}/${e.target.dataset.id}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }).then((response) => response.json());
+        alert('Book deleted succesfully');
+      } else {
+        alert('You did not deleted the book');
+      }
     }
   });
   // Validate form input
