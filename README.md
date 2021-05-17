@@ -14,8 +14,9 @@ Run in terminal :
 * json-server books.json
 
 Possible to throw some errors, in that case in Power Shell run:
-*Set-ExecutionPolicy RemoteSignedto --- start
-*Set-ExecutionPolicy Restricted --- when finish
+
+* Set-ExecutionPolicy RemoteSignedto --- start
+* Set-ExecutionPolicy Restricted --- when finish
 
 Open `index.html`. To use this app is really simple, I think. When accesing it the user will see a `ADD BOOK` button, few buttons for category and one search bar.
 When clicking `ADD BOOK` button a form will be displayed and those form can be completed with information about a book. 
