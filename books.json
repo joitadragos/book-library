@@ -1,40 +1,85 @@
 {
   "books": [
     {
-      "title": "test",
-      "author": "test",
-      "description": "test",
+      "title": "Sub aceeasi stea",
+      "author": "John Green",
+      "description": "Doi adolescenti cu probleme, ea probleme cu respiratia(nu mai stiu sigur daca a avut cancer sau nu), lui ii lipsea un picior. Se intalnesc se intampla chestii. El cumpara tigarii dar niciodata nu le aprindea",
       "rating": "like",
-      "starRating": " ",
-      "category": "history",
-      "id": 1
+      "starRating": " ★★★",
+      "category": "others",
+      "id": 4
     },
     {
-      "title": "test2",
-      "author": "test2",
-      "description": "test2",
+      "title": "Life of PI",
+      "author": "Yann Martel",
+      "description": "Omu meu Piscine, nici lui nu ii placea numele, dupa ce vaporul pe care se afla se transform in submarin se trezeste in situatia in care trebuie sa supravietuiasca intr-o barca pe care o imparte cu un tigru. Merita citita",
       "rating": "like",
       "starRating": " ★★★★",
-      "category": "computers",
-      "id": 2
+      "category": "others",
+      "id": 5
     },
     {
-      "title": "test3",
-      "author": "test3",
-      "description": "test3",
+      "title": "Iuresul Sabiilor ",
+      "author": "George R.R. Martin",
+      "description": "Sabii, dragoni, moarte, bautura, Tyrion Lannister. \"You know nothing John Snow\"(nu e in cartea asta dar trebuia pus aici)",
+      "rating": "like",
+      "starRating": " ★★★★",
+      "category": "parenting",
+      "id": 6
+    },
+    {
+      "title": "Inclestarea Regilor",
+      "author": "George R.R Martin",
+      "description": "Regi, razboaie, bautura, Ned Stark inca traieste(daca imi amintesc bine). \"You know nothing John Snow\"(nici aici nu e, dar si aici trebuia pus).",
+      "rating": "like",
+      "starRating": " ★★★★",
+      "category": "others",
+      "id": 7
+    },
+    {
+      "title": "Rich Dad, Poor Dad",
+      "author": "Robert Kiyosaki",
+      "description": "Omu meu a scris multe acolo, dar dupa ce am citit inca nu am ajuns bogat si nici nu o sa ajung prea curand. Interesant dar nu prea pwp",
+      "rating": "dislike",
+      "starRating": " ",
+      "category": "literature",
+      "id": 8
+    },
+    {
+      "title": "Arta subtila a nepasarii",
+      "author": "Mark Manson",
+      "description": "Nu e genul meu, o pun aici doar sa imi amintesc cat de mizerie mi s-a parut ca e",
+      "rating": "dislike",
+      "starRating": " ",
+      "category": "hobbies",
+      "id": 9
+    },
+    {
+      "title": "Trilogia Cunoasterii",
+      "author": "Lucian Blaga",
+      "description": "Informatia din ea e interesanta dar eu nu reusesc sa o termin de ceva timp, o sa mai incerc.",
       "rating": "neutral",
       "starRating": " ★★",
-      "category": "parenting",
-      "id": 3
+      "category": "literature",
+      "id": 10
     },
     {
-      "title": "test22",
-      "author": "test2",
-      "description": "test2",
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "description": "Interesant de citi, informatie prezentata simplu, pe intelesul oricui. WORK in PROGRESS, mai am de citit dar imi place.",
       "rating": "neutral",
-      "starRating": " ",
-      "category": "computers",
-      "id": 4
+      "starRating": " ★★★★",
+      "category": "history",
+      "id": 11
+    },
+    {
+      "title": "Romaneste. Punct si de la capat",
+      "author": "Florin Dumitrescu",
+      "description": "Carte de bucate, are retete in ea, am pus aici doar ca sa am cate ceva pentru fiecare categorie .",
+      "rating": "neutral",
+      "starRating": " ★★",
+      "category": "cooking",
+      "id": 12
     }
   ]
 }

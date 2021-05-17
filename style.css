@@ -178,3 +178,35 @@ option {
   text-align: center;
   color: var(--black-color);
 }
+.hamburger-menu {
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+}
+.hamburger-menu img {
+  height: 100px;
+  width: 100px;
+}
+
+/* Media Query: Large Smartcategory(vertical) */
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .item {
+    width: auto;
+  }
+  .category-buttons {
+    display: none;
+  }
+  .search {
+    width: auto;
+  }
+  h1 {
+    width: auto;
+    margin: 20px;
+  }
+  .hamburger-menu {
+    display: flex;
+  }
+}
